@@ -131,3 +131,31 @@ Julia asked for a scroll-driven opening: a column at the top of the homepage tha
 - §2.11 says gold/bronze is NOT part of the final primary palette (ink navy + limestone only) — but the mood-board direction Julia chose is gold-heavy and she explicitly asked to match it. Kept gold; flag if the designer's final palette drops it.
 - §2.13 cautions against mountain-top clichés and literal columns as visual shortcuts — same tension with the chosen mood boards; noted, not changed.
 - §8.15/§6.17 owner decisions that touch the site: faith terminology balance, audience order, Tulsa prominence, founder bio detail, testimonials policy.
+
+---
+
+## Session 4 — 2026-07-15
+
+**GitHub + GitHub Pages set up; Session 3's work went live for the first time.**
+
+- Published the repo via VS Code Source Control → "Publish to GitHub": `github.com/juliatwright22-source/firmitas-website` (public).
+- Enabled GitHub Pages (Settings → Pages → Deploy from branch `master`, root) → live at `https://juliatwright22-source.github.io/firmitas-website/`. Confirmed via a case-sensitivity audit (Windows dev vs. Linux-hosted Pages) that every `src`/`href` path matches actual filenames exactly — no broken-link risk from the OS switch.
+- Netlify is the still-planned eventual production target (custom domain, HTTPS, likely form handling); GitHub Pages is being used in the meantime as a free live-preview URL. The two don't conflict — same repo, either or both can run simultaneously.
+- **Discovered 3 substantial commits sitting local-only, never pushed:** `48d9e39` (mood-board redesign + About/Services/Contact/FAQ build-out), `9e48f50` (Brand Bible copy alignment), `8feef93` (scroll-driven crumbling-column homepage story) — all logged under Session 3 above but never synced to GitHub, so the Pages URL was still serving the old Session-2 homepage-only version. Pushed all three (`git push origin master`) — the real current site is now actually live and viewable.
+- Revisited `design-reference/designreference1.jpg` (the 6-mockup sheet: quote+team, individual-coaching hero, team-coaching hero, leadership-development curriculum, Insights/blog listing, contact-with-map) against a new Julia request to copy those layouts exactly and generate stock photos. Cross-checked against Session 3's decisions: team section, fake client-logo bar, and blog page are still intentionally excluded per the brief; this was flagged to Julia before any layout work started (not yet resolved as of end of session — see below).
+
+**Pending / needs Julia's input — carried over:**
+1. Contact form handling (Netlify Forms vs. external scheduler) — still not wired.
+2. Real phone/email — still placeholders in the footer.
+3. Domain spelling confirmation, then Netlify connection.
+4. Real photography to eventually replace the cropped AI mood-board images (`hero-mountain.jpg`, `column-dark.jpg`, `compass-navy.jpg`, `column-sketch.jpg`, `column-stage-1..5.jpg`).
+5. Social links still `#` placeholders.
+6. §2.11/§2.13 Brand Bible tension (gold palette, literal column/mountain imagery) — unresolved.
+7. §8.15/§6.17 owner decisions — unresolved.
+8. **New, unresolved this session:** whether the `designreference1.jpg` 6-mockup layouts should be copied more literally page-by-page (e.g. dedicated Individual Coaching / Team Coaching sections, curriculum-roadmap module layout) beyond what Session 3 already built, and whether to AI-generate additional stock-style photography for this — paused pending Julia's answer.
+
+**Next session should:** pick up the designreference1.jpg layout-matching request where it paused — get Julia's call on the team/logo/blog exclusions (expected: keep excluded, per Session 3 precedent) and on AI-generating additional stock photography, then apply any further layout changes.
+
+**Verification checks run this session (no changes needed):**
+- Confirmed `images/logo-monogram.svg` (the real F monogram) is present and still wired into header/footer/favicon on all 5 pages — no separate wordmark/lockup SVG or white-native version exists yet (still open, see Session 2/3 logs).
+- Confirmed the three brand colors in `css/variables.css` exactly match Julia's spec: Ink Navy `#0F1B2D`, Limestone `#F2EFE6`, Heritage Gold `#C8A461`. Noted that several derived/supporting shades (lighter/darker navy for gradients, deeper limestone, warm "paper" near-white, soft gold for hover states) also exist in the token file as computed variants of the three primaries, not separate brand colors — flagged to Julia, no change requested.
