@@ -170,3 +170,21 @@ Julia provided the full 12-section Firmitas Brand Bible (.docx files) at
 **Added local font files so Julia can use the same fonts in Illustrator.** Julia is designing the logo in Illustrator and wanted the site fonts usable there too. First floated Adobe Fonts (would mean picking new fonts — IvyPresto Display / Proxima Nova — plus Julia creating a Web Project on fonts.adobe.com and sending back an embed code); she said that was too much setup. Since Playfair Display and Work Sans are both open-license (SIL OFL) Google Fonts, downloaded the actual variable `.ttf` files straight from Google's official `google/fonts` GitHub repo into a new `fonts/` folder: `PlayfairDisplay-Variable.ttf`, `PlayfairDisplay-Italic-Variable.ttf`, `WorkSans-Variable.ttf`, `WorkSans-Italic-Variable.ttf`. No website changes — same fonts already in use. Julia just needs to right-click each file in `fonts/` → Install; they'll then appear in Illustrator's font list, identical to the web versions. No Adobe Fonts account/subscription/approval step required.
 
 **Replaced `images/hero-mountain.jpg` again with a second panorama.** Julia shared another hiker-on-summit shot (same CloudFront/Higgsfield source, 4096×1738 PNG, ~2.7MB) — a more dramatic twilight/sunset version with richer purple-gold sky tones, pairing well with the navy/gold palette. Same pipeline as the first swap: resized via PowerShell `System.Drawing` to 2400×1018, re-encoded as JPEG quality 82 (~168KB), saved over the same filename so no HTML changes were needed.
+
+### End of Session 4 — status recap
+
+**Resolved this session:** GitHub repo + GitHub Pages live at `https://juliatwright22-source.github.io/firmitas-website/`; Session 3's stranded work finally pushed; homepage hero rebuilt as full-bleed photo with overlaid text (now on its second, more dramatic photo); duplicate founder section removed from the homepage; body font changed Archivo → Work Sans; logo mark changed to `signature-f.svg` everywhere; Illustrator-ready local copies of both site fonts added to `fonts/`; brand colors and font-loading verified/fixed.
+
+**Superseded notes from earlier in this session:** the "Pending" list below (written mid-session) still says `logo-monogram.svg` is the active mark and lists `column-stage-*.jpg` — both are now stale; see the swap/revert entries above for current state. `images/logo-monogram.svg` still exists on disk but is unused by any page — candidate for deletion if Julia confirms she's fully moved to the signature mark.
+
+**Still open, carried to next session:**
+1. Contact form handling (Netlify Forms vs. external scheduler) — not wired.
+2. Real phone/email — still placeholders in the footer.
+3. Domain spelling confirmation, then Netlify connection.
+4. Real (non-AI) photography, long-term — current hero/section images are all AI-generated/cropped from mood boards.
+5. Social links still `#` placeholders.
+6. §2.11/§2.13 Brand Bible tension (gold palette use, literal column/mountain imagery) — unresolved.
+7. §8.15/§6.17 Brand Bible owner decisions (faith-language balance, audience order, Tulsa prominence, founder bio detail, testimonials policy) — unresolved.
+8. Paused: whether to copy `designreference1.jpg`'s 6 mockup layouts more literally page-by-page, and whether to AI-generate more stock-style photography for that — team section, fake client-logo bar, and blog page stay excluded per Session 3's decision either way.
+
+**Next session should:** ask Julia which of the above to prioritize — likely either the paused `designreference1.jpg` layout question, or wiring up the contact form now that the visual design is largely stable.
