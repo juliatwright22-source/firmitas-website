@@ -60,4 +60,20 @@ Running log for continuity across sessions. Read this at the start of every sess
 8. Founder bio specifics (name past employers or stay generic) — still undecided; current homepage bio uses the generic version from the brief.
 9. Real photography — hero section still has no image (solid navy background); the homepage's icon-triad portrait is still a gray placeholder box. Founder headshot is now real (see below).
 
+- Julia confirmed only `index.html` has real content — `about.html`, `services.html`, `contact.html`, `faq.html` are still empty shells; flagged this explicitly since an earlier summary may have implied more was done.
+- Checked `images/` for a "new signature F logo" Julia mentioned — it's the same `logo-monogram.svg` already wired in during this session, not a separate file.
+- Added a **Video & Animation** workflow section to `README.md` (Julia's addendum): AI-generated clips (e.g. Higgsfield) go in a new `videos/` folder, must be compressed (<5MB, MP4/H.264), embedded via native `<video>` with a poster fallback, no autoplay on mobile, must respect `prefers-reduced-motion`, used sparingly (one hero moment, not a default treatment), and never fabricated/sourced by Claude — only real files Julia provides. Created the empty `videos/` folder (with `.gitkeep` so git tracks it). No video files exist yet — nothing to embed.
+- Committed: `5c41ef4` (video/animation docs + folder).
+
+**Pending / needs Julia's input — carried over:**
+1. Logo — real monogram SVG in use; still waiting on a full lockup/wordmark SVG if one exists, and a light/white-native version if the CSS invert-filter trick ever looks off.
+2. GitHub repo not yet published.
+3. Netlify not yet connected.
+4. Contact form handling method (Netlify Forms vs. external scheduler) — undecided.
+5. Real phone/email — still placeholder text in the footer.
+6. Domain spelling (`firmitas.life`?) — needs exact confirmation.
+7. Founder bio specifics (name past employers or stay generic) — undecided.
+8. Real photography — hero section and icon-triad portrait still have no image.
+9. No video clips provided yet — workflow is documented and ready whenever Julia has one.
+
 **Next session should:** build out `about.html`, `services.html`, `contact.html`, `faq.html` using the same section/copy approach, once Julia confirms sitemap/FAQ placement and the still-open decisions above.
