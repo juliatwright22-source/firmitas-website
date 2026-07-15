@@ -37,6 +37,14 @@ img {
   padding: 0 var(--space-md);
 }
 
+.founder-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: top center;
+}
+
 /* Placeholder photo box — used until real photography/headshots are available */
 .photo-placeholder {
   background-color: #D9D9D9;
@@ -49,7 +57,7 @@ img {
   min-height: 240px;
 }
 
-/* Gold CTA button — primary interactive element on navy/limestone backgrounds */
+/* Buttons */
 .btn-gold {
   display: inline-block;
   background-color: var(--color-gold);
@@ -57,9 +65,69 @@ img {
   font-family: var(--font-sans);
   font-weight: 600;
   text-decoration: none;
-  padding: var(--space-xs) var(--space-md);
+  padding: 0.85rem var(--space-md);
   border: none;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: inherit;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.85rem var(--space-md);
+  border: 1px solid currentColor;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--limestone {
+  background-color: var(--color-limestone);
+}
+
+.section--navy {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.section--navy h2 {
+  color: var(--color-white);
+}
+
+.section-heading {
+  max-width: 44rem;
+  margin-bottom: var(--space-lg);
+}
+
+.section-heading h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.section-heading p {
+  margin-top: var(--space-sm);
+  font-size: 1.125rem;
+}
+
+.accent {
+  color: var(--color-gold);
 }
 
 /* Shared header/footer mount points — filled by js/includes.js */
@@ -68,8 +136,313 @@ img {
   width: 100%;
 }
 
+/* Logo lockup — F monogram mark + text wordmark */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-mark {
+  height: 34px;
+  width: auto;
+}
+
+/* Footer sits on navy — invert the (dark) monogram to white */
+.logo-mark--light {
+  filter: brightness(0) invert(1);
+}
+
+.wordmark-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  color: var(--color-navy);
+  line-height: 1;
+}
+
+.wordmark-sub {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 0.2rem;
+}
+
+.wordmark--light {
+  color: var(--color-white);
+}
+
+.wordmark-sub--light {
+  color: var(--color-gold);
+}
+
+/* Header / nav */
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid rgba(15, 27, 45, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-navy);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.nav-menu a.btn-gold {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    border-bottom: 1px solid rgba(15, 27, 45, 0.08);
+    display: none;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+}
+
+/* Hero */
+/* Full-bleed photo hero, per the brand's UI pattern — swap in a real image (executive on a
+   summit / architectural column) once photography is selected; navy scrim keeps text legible. */
+.hero {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-xl) 0;
+}
+
+.hero-inner {
+  max-width: 42rem;
+}
+
+.hero h1 {
+  color: var(--color-white);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--space-sm);
+}
+
+.hero .subheadline {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  max-width: 38rem;
+}
+
+.hero .accent-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-gold);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.hero-ctas .btn-outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* Icon triad — column (Strength), compass (Direction), mountain (Legacy) */
+.icon-triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.icon-triad-item {
+  text-align: left;
+}
+
+.icon-triad-item .icon-mark {
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.icon-triad-item h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Feature row pairing icon triad with a portrait photo */
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .feature-row {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-triad {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card grid — used for coaching options and other repeating content */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  background-color: var(--color-white);
+  border: 1px solid rgba(15, 27, 45, 0.1);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+}
+
+.card p {
+  flex-grow: 1;
+}
+
+/* Two-column layout used for narrative + photo sections */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Final invitation / CTA band */
+.cta-band {
+  text-align: center;
+}
+
+.cta-band h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.cta-band p {
+  max-width: 36rem;
+  margin: 0 auto var(--space-md);
+  font-size: 1.125rem;
+}
+
+/* Footer */
 footer.site-footer {
   background-color: var(--color-navy);
   color: var(--color-limestone);
   padding: var(--space-lg) 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-logo .wordmark-group {
+  align-items: flex-start;
+}
+
+.footer-contact p {
+  margin: 0.25rem 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: var(--color-gold);
+  font-size: 0.875rem;
+}
+
+.footer-copyright {
+  font-size: 0.8125rem;
+  opacity: 0.7;
+  margin-top: var(--space-sm);
 }
