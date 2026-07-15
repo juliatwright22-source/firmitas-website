@@ -139,7 +139,7 @@ Julia provided the full 12-section Firmitas Brand Bible (.docx files) at
 1. Contact form handling (Netlify Forms vs. external scheduler) — still not wired.
 2. Real phone/email — still placeholders in the footer.
 3. Domain spelling confirmation, then Netlify connection.
-4. Real photography to eventually replace the cropped AI mood-board images (`hero-mountain.jpg`, `column-dark.jpg`, `compass-navy.jpg`, `column-sketch.jpg`, `column-stage-1..5.jpg`).
+4. Real photography to eventually replace the cropped AI mood-board images (`hero-mountain.jpg`, `column-dark.jpg`, `compass-navy.jpg`, `column-sketch.jpg`).
 5. Social links still `#` placeholders.
 6. §2.11/§2.13 Brand Bible tension (gold palette, literal column/mountain imagery) — unresolved.
 7. §8.15/§6.17 owner decisions — unresolved.
@@ -152,3 +152,5 @@ Julia provided the full 12-section Firmitas Brand Bible (.docx files) at
 - Confirmed the three brand colors in `css/variables.css` exactly match Julia's spec: Ink Navy `#0F1B2D`, Limestone `#F2EFE6`, Heritage Gold `#C8A461`. Noted that several derived/supporting shades (lighter/darker navy for gradients, deeper limestone, warm "paper" near-white, soft gold for hover states) also exist in the token file as computed variants of the three primaries, not separate brand colors — flagged to Julia, no change requested.
 
 **Fixed: fonts weren't actually loading.** Julia asked whether Playfair Display / Archivo were legally usable — both are Google Fonts under the SIL Open Font License (free for commercial use, no fee, no attribution required). But checking surfaced that `variables.css` declared them as font tokens while no page ever loaded them (no Google Fonts `<link>`, no `@font-face`) — every visitor was silently getting the browser's fallback system serif/sans-serif instead of the real brand typefaces. Added Google Fonts `<link>` tags (with `preconnect`) to the `<head>` of all 5 pages — Playfair Display weights 400/500/600/700 + italic 400/600 (for `.accent-line`), Archivo weights 400/500/600/700 (covers every `font-weight` used in `styles.css`). No cost either way — this was purely a missing-link bug, not a licensing question.
+
+**Reverted: scroll-driven crumbling-column homepage story.** Julia asked to go back to how the site looked before this element was added. Ran `git revert` on commit `8feef93` (clean auto-merge, no conflicts with the later CONTEXT.md/font-loading commits). Homepage sections 3–5 (Leadership Reality, What Firmitas Does, Biblical Foundation) are back to static stacked sections, same approved copy as before — no more scroll-scrubbed panel/frame animation. `js/main.js`'s scrolly logic and the 5 `images/column-stage-*.jpg` Higgsfield frames were removed. Reverted via commit `c0f170d`; the original Session 3 log entries above describing the feature are left intact as history of what was built and then undone, per this note.
