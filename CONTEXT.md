@@ -105,3 +105,20 @@ Running log for continuity across sessions. Read this at the start of every sess
 5. Domain spelling confirmation.
 6. Real photography to eventually replace the cropped AI mood-board images.
 7. Social links are still `#` placeholders.
+
+### Session 3 (continued) — Brand Bible received, copy aligned to approved language
+
+Julia provided the full 12-section Firmitas Brand Bible (.docx files) at
+`C:\Users\JuliaWright\OneDrive - Optimize Strategic Advisors\Desktop\FirmitasBrandGuidlines\` — **the authoritative copy source for all future content work.** Key map: §1 foundation/mission/values, §2 identity/voice/visual rules, §3 ideal client, §4 methodology, §5 frameworks, §6 services & offer structure (6.15 = approved launch menu), §7 client experience, §8 messaging & website language (8.5 homepage copy, 8.6 About copy, 8.7 services language, 8.10 CTAs + discovery-form fields, 8.11 SEO, **8.13 = the approved website FAQ** — earlier note saying "8.6" was wrong), §9 content/social, §10 sales, §11 operating standards, §12 (misc).
+
+**Copy updates applied (approved language, mostly verbatim):**
+- FAQ page: replaced all 8 draft Q&As with the 7 approved Q&As from §8.13.
+- About: hero now uses the approved "Leadership is architecture." opening (§8.6); name section uses the approved meaning-of-the-name copy (§8.6 + §2.2), dropping the invented Vitruvius firmitas/utilitas/venustas paragraph; founder section = approved positioning + "coach is not the hero" philosophy; quote band now the approved Mission statement (§1.4) instead of the mood-board purpose line.
+- Services: added approved outcome lines (§8.7) to three services; "How it begins" uses the approved discovery-invitation copy + coaching-agreement components (§6.4); CTA switched to the approved service-page CTA "Discuss Your Leadership Priorities" (§8.10).
+- Contact: "What to expect" uses approved discovery language (§8.5/§8.13); form rebuilt to §8.10 field spec — name, email, phone, company & role, inquiry type select (individual/team/company-sponsored), prompting challenge textarea, how-heard, optional biblical-grounding checkbox. Still not wired to any submission handler.
+- Homepage: title/description use §8.11 working SEO standard (includes Tulsa — **Tulsa prominence is an owner decision per §8.15, Julia should confirm**); added the client-outcome line (§8.2) to "What Firmitas Does"; final CTA band uses the approved discovery-invitation paragraph.
+
+**New flags for Julia from the Brand Bible:**
+- §2.11 says gold/bronze is NOT part of the final primary palette (ink navy + limestone only) — but the mood-board direction Julia chose is gold-heavy and she explicitly asked to match it. Kept gold; flag if the designer's final palette drops it.
+- §2.13 cautions against mountain-top clichés and literal columns as visual shortcuts — same tension with the chosen mood boards; noted, not changed.
+- §8.15/§6.17 owner decisions that touch the site: faith terminology balance, audience order, Tulsa prominence, founder bio detail, testimonials policy.

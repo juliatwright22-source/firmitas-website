@@ -897,6 +897,35 @@ img {
   resize: vertical;
 }
 
+.form-field select {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-navy);
+  background-color: var(--color-paper);
+  border: 1px solid transparent;
+  padding: 0.8rem 0.9rem;
+}
+
+.form-field select:focus {
+  border-color: var(--color-gold);
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  margin: var(--space-sm) 0;
+  cursor: pointer;
+}
+
+.form-check input {
+  margin-top: 0.3rem;
+  accent-color: var(--color-gold);
+  flex-shrink: 0;
+}
+
 .contact-card .btn-gold {
   width: 100%;
   text-align: center;
