@@ -2,15 +2,25 @@
 
 :root {
   /* Color palette */
-  --color-navy: #0F1B2D;       /* Ink Navy — primary */
-  --color-limestone: #F2EFE6;  /* Limestone — secondary */
-  --color-gold: #C8A461;       /* Heritage Gold — accent, use sparingly */
+  --color-navy: #0F1B2D;        /* Ink Navy — primary */
+  --color-navy-light: #1B2C47;  /* lifted navy for gradient bands */
+  --color-navy-deep: #0A1220;   /* darkest navy for gradient bases */
+  --color-limestone: #F2EFE6;   /* Limestone — the site canvas */
+  --color-limestone-deep: #E9E4D6; /* slightly deeper limestone for contrast panels */
+  --color-paper: #FAF8F2;       /* warm near-white for cards / alternating bands */
+  --color-gold: #C8A461;        /* Heritage Gold — accent, use sparingly */
+  --color-gold-soft: #D8BC85;   /* lighter gold for hovers on dark */
   --color-white: #FFFFFF;
-  --color-charcoal: #2B2B2B;   /* supporting dark neutral for body text */
+  --color-charcoal: #2B2B2B;    /* supporting dark neutral for body text */
+
+  /* Hairlines / borders */
+  --hairline: rgba(15, 27, 45, 0.12);
+  --hairline-light: rgba(242, 239, 230, 0.18);
 
   /* Typography */
   --font-serif: 'Playfair Display', serif;   /* headlines, wordmark, italic accent lines */
   --font-sans: 'Archivo', sans-serif;        /* body copy, nav, UI, forms */
+  --tracking-label: 0.18em;                  /* letterspaced uppercase labels */
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -18,7 +28,12 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 6rem;
+  --space-2xl: 8rem;
 
   /* Layout */
   --max-width: 1200px;
+
+  /* Elevation */
+  --shadow-soft: 0 20px 45px rgba(15, 27, 45, 0.12);
+  --shadow-card: 0 8px 24px rgba(15, 27, 45, 0.08);
 }

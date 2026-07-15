@@ -1,6 +1,6 @@
 /* Firmitas site styles — references design tokens in variables.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Archivo:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Archivo:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -11,24 +11,40 @@
 body {
   font-family: var(--font-sans);
   color: var(--color-charcoal);
-  background-color: var(--color-white);
-  line-height: 1.6;
+  background-color: var(--color-limestone);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
   color: var(--color-navy);
-  line-height: 1.2;
+  line-height: 1.15;
+  font-weight: 600;
 }
 
 a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
 img {
   max-width: 100%;
   display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 .container {
@@ -37,88 +53,140 @@ img {
   padding: 0 var(--space-md);
 }
 
-.founder-photo {
-  width: 100%;
-  height: 100%;
-  min-height: 320px;
-  object-fit: cover;
-  object-position: top center;
+/* ---------------------------------------------------------------------------
+   Signature brand elements
+--------------------------------------------------------------------------- */
+
+/* Short gold hairline rule — appears under headings throughout the brand */
+.gold-rule {
+  display: block;
+  width: 56px;
+  height: 2px;
+  background-color: var(--color-gold);
+  border: none;
+  margin: var(--space-sm) 0;
 }
 
-/* Placeholder photo box — used until real photography/headshots are available */
-.photo-placeholder {
-  background-color: #D9D9D9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-charcoal);
-  font-size: 0.875rem;
-  text-align: center;
-  min-height: 240px;
+.gold-rule--center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Buttons */
+/* Letterspaced uppercase label, gold */
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+/* Serif italic accent line — "Built to stand." */
+.accent-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-gold);
+  font-size: 1.375rem;
+}
+
+.accent {
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------------------------
+   Buttons
+--------------------------------------------------------------------------- */
+
 .btn-gold {
   display: inline-block;
   background-color: var(--color-gold);
   color: var(--color-navy);
   font-family: var(--font-sans);
   font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  padding: 0.85rem var(--space-md);
-  border: none;
+  padding: 0.9rem 1.9rem;
+  border: 1px solid var(--color-gold);
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-soft);
+  border-color: var(--color-gold-soft);
 }
 
 .btn-outline {
   display: inline-block;
   background-color: transparent;
-  color: inherit;
+  color: var(--color-navy);
   font-family: var(--font-sans);
   font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  padding: 0.85rem var(--space-md);
+  padding: 0.9rem 1.9rem;
   border: 1px solid currentColor;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.eyebrow {
-  display: block;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  color: var(--color-gold);
-  margin-bottom: var(--space-xs);
+.btn-outline:hover {
+  background-color: var(--color-navy);
+  color: var(--color-limestone);
 }
+
+/* ---------------------------------------------------------------------------
+   Sections
+--------------------------------------------------------------------------- */
 
 .section {
   padding: var(--space-xl) 0;
+}
+
+.section--paper {
+  background-color: var(--color-paper);
 }
 
 .section--limestone {
   background-color: var(--color-limestone);
 }
 
+/* Navy band with the soft top-light gradient from the brand mockups */
 .section--navy {
-  background-color: var(--color-navy);
-  color: var(--color-white);
+  background: linear-gradient(180deg, var(--color-navy-light) 0%, var(--color-navy) 45%, var(--color-navy-deep) 100%);
+  color: var(--color-limestone);
 }
 
-.section--navy h2 {
+.section--navy h2,
+.section--navy h3 {
   color: var(--color-white);
 }
 
 .section-heading {
-  max-width: 44rem;
+  max-width: 46rem;
   margin-bottom: var(--space-lg);
 }
 
+.section-heading--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-heading--center .gold-rule {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .section-heading h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 2.875rem);
 }
 
 .section-heading p {
@@ -126,11 +194,15 @@ img {
   font-size: 1.125rem;
 }
 
-.accent {
-  color: var(--color-gold);
+.lede {
+  max-width: 44rem;
+  font-size: 1.125rem;
 }
 
-/* Shared header/footer mount points — filled by js/includes.js */
+/* ---------------------------------------------------------------------------
+   Shared header / footer mount points — filled by js/includes.js
+--------------------------------------------------------------------------- */
+
 #site-header,
 #site-footer {
   width: 100%;
@@ -140,11 +212,12 @@ img {
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
+  text-decoration: none;
 }
 
 .logo-mark {
-  height: 34px;
+  height: 38px;
   width: auto;
 }
 
@@ -160,9 +233,9 @@ img {
 
 .wordmark {
   font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.14em;
   color: var(--color-navy);
   line-height: 1;
 }
@@ -170,26 +243,25 @@ img {
 .wordmark-sub {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--color-gold);
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 
 .wordmark--light {
   color: var(--color-white);
 }
 
-.wordmark-sub--light {
-  color: var(--color-gold);
-}
+/* ---------------------------------------------------------------------------
+   Header / nav — warm limestone bar, per the homepage mockup
+--------------------------------------------------------------------------- */
 
-/* Header / nav */
 .site-header {
-  background-color: var(--color-white);
-  border-bottom: 1px solid rgba(15, 27, 45, 0.08);
+  background-color: var(--color-limestone);
+  border-bottom: 1px solid var(--hairline);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -199,12 +271,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--space-sm);
-  padding-bottom: var(--space-sm);
-}
-
-.logo-link {
-  text-decoration: none;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
 }
 
 .nav-toggle {
@@ -235,13 +303,31 @@ img {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9375rem;
+  color: var(--color-navy);
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  border-bottom-color: var(--color-gold);
+}
+
+.nav-menu a[aria-current="page"] {
+  border-bottom-color: var(--color-gold);
 }
 
 .nav-menu a.btn-gold {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  padding: 0.7rem 1.3rem;
+  border-bottom: 1px solid var(--color-gold);
 }
 
-@media (max-width: 860px) {
+.nav-menu a.btn-gold:hover {
+  border-bottom-color: var(--color-gold-soft);
+}
+
+@media (max-width: 900px) {
   .nav-toggle {
     display: flex;
   }
@@ -251,12 +337,12 @@ img {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: var(--color-white);
+    background-color: var(--color-limestone);
     flex-direction: column;
     align-items: flex-start;
     padding: var(--space-md);
     gap: var(--space-sm);
-    border-bottom: 1px solid rgba(15, 27, 45, 0.08);
+    border-bottom: 1px solid var(--hairline);
     display: none;
   }
 
@@ -265,36 +351,36 @@ img {
   }
 }
 
-/* Hero */
-/* Full-bleed photo hero, per the brand's UI pattern — swap in a real image (executive on a
-   summit / architectural column) once photography is selected; navy scrim keeps text legible. */
-.hero {
-  background-color: var(--color-navy);
-  color: var(--color-white);
-  padding: var(--space-xl) 0;
+/* ---------------------------------------------------------------------------
+   Hero — split panel: headline on limestone, summit photography at right
+--------------------------------------------------------------------------- */
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  min-height: min(680px, 82vh);
+  background-color: var(--color-limestone);
 }
 
-.hero-inner {
-  max-width: 42rem;
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-md) var(--space-xl) max(var(--space-md), calc((100vw - var(--max-width)) / 2 + var(--space-md)));
 }
 
-.hero h1 {
-  color: var(--color-white);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+.hero-copy h1 {
+  font-size: clamp(2.75rem, 5.2vw, 4.25rem);
   margin-bottom: var(--space-sm);
 }
 
-.hero .subheadline {
-  font-size: 1.25rem;
+.hero-copy .subheadline {
+  font-size: 1.1875rem;
+  max-width: 34rem;
   margin-bottom: var(--space-sm);
-  max-width: 38rem;
 }
 
-.hero .accent-line {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--color-gold);
-  font-size: 1.25rem;
+.hero-copy .accent-line {
   margin-bottom: var(--space-md);
 }
 
@@ -304,12 +390,109 @@ img {
   gap: var(--space-sm);
 }
 
-.hero-ctas .btn-outline {
-  border-color: var(--color-white);
-  color: var(--color-white);
+.hero-photo {
+  position: relative;
+  min-height: 420px;
 }
 
-/* Icon triad — column (Strength), compass (Direction), mountain (Legacy) */
+.hero-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* subtle warm blend where photo meets limestone */
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--color-limestone) 0%, rgba(242, 239, 230, 0) 12%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    order: 2;
+    min-height: 340px;
+  }
+
+  .hero-copy {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Cover-image panels & framed photography
+--------------------------------------------------------------------------- */
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-panel {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.photo-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Portrait with the offset gold frame */
+.framed-photo {
+  position: relative;
+  display: inline-block;
+}
+
+.framed-photo::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: -18px;
+  bottom: -18px;
+  border: 1px solid var(--color-gold);
+  z-index: -1;
+}
+
+.founder-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Placeholder photo box — used until real photography/headshots are available */
+.photo-placeholder {
+  background-color: var(--color-limestone-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-charcoal);
+  font-size: 0.875rem;
+  text-align: center;
+  min-height: 240px;
+}
+
+/* ---------------------------------------------------------------------------
+   Icon triad — column (Strength), compass (Direction), mountain (Legacy)
+--------------------------------------------------------------------------- */
+
 .icon-triad {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -317,59 +500,44 @@ img {
 }
 
 .icon-triad-item {
-  text-align: left;
+  text-align: center;
 }
 
 .icon-triad-item .icon-mark {
   color: var(--color-gold);
-  margin-bottom: var(--space-xs);
+  margin: 0 auto var(--space-sm);
+  display: block;
 }
 
 .icon-triad-item h3 {
-  font-size: 1.125rem;
-  margin-bottom: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
 }
 
-/* Feature row pairing icon triad with a portrait photo */
+.section--navy .icon-triad-item h3 {
+  color: var(--color-limestone);
+}
+
+.icon-triad-item p {
+  font-size: 0.9375rem;
+  max-width: 16rem;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------------------------
+   Layout patterns
+--------------------------------------------------------------------------- */
+
+/* Feature row pairing content with a photo panel */
 .feature-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-lg);
   align-items: center;
-}
-
-@media (max-width: 760px) {
-  .feature-row {
-    grid-template-columns: 1fr;
-  }
-
-  .icon-triad {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Card grid — used for coaching options and other repeating content */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-md);
-}
-
-.card {
-  background-color: var(--color-white);
-  border: 1px solid rgba(15, 27, 45, 0.1);
-  padding: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-.card h3 {
-  font-size: 1.25rem;
-}
-
-.card p {
-  flex-grow: 1;
 }
 
 /* Two-column layout used for narrative + photo sections */
@@ -380,69 +548,453 @@ img {
   align-items: center;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 800px) {
+  .feature-row,
   .two-col {
     grid-template-columns: 1fr;
   }
+
+  .icon-triad {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
 }
 
-/* Final invitation / CTA band */
+/* Narrative section with the architectural column sketch bleeding in at right */
+.section--sketch {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--sketch::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(46%, 560px);
+  background-image: url("../images/column-sketch.jpg");
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,1) 45%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,1) 45%);
+  pointer-events: none;
+}
+
+.section--sketch .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Cards
+--------------------------------------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  background-color: var(--color-paper);
+  border: 1px solid var(--hairline);
+  border-top: 2px solid var(--color-gold);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.card h3 {
+  font-size: 1.3125rem;
+}
+
+.card p {
+  flex-grow: 1;
+  font-size: 0.9875rem;
+}
+
+.card .card-link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-navy);
+  margin-top: var(--space-xs);
+}
+
+.card .card-link::after {
+  content: " \2192";
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------------------------
+   Quote / mission band (navy)
+--------------------------------------------------------------------------- */
+
+.quote-band {
+  text-align: center;
+}
+
+.quote-band blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.35;
+  color: var(--color-white);
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.quote-band .quote-source {
+  display: block;
+  margin-top: var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------------------------
+   CTA band
+--------------------------------------------------------------------------- */
+
 .cta-band {
   text-align: center;
 }
 
 .cta-band h2 {
   margin-bottom: var(--space-sm);
+  font-size: clamp(2rem, 4vw, 2.875rem);
 }
 
 .cta-band p {
-  max-width: 36rem;
+  max-width: 38rem;
   margin: 0 auto var(--space-md);
   font-size: 1.125rem;
 }
 
-/* Footer */
-footer.site-footer {
-  background-color: var(--color-navy);
-  color: var(--color-limestone);
+/* ---------------------------------------------------------------------------
+   Interior page hero
+--------------------------------------------------------------------------- */
+
+.page-hero {
+  background-color: var(--color-limestone);
+  border-bottom: 1px solid var(--hairline);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.page-hero .lede {
+  margin: var(--space-sm) auto 0;
+}
+
+/* Split page hero with a photo panel (About) */
+.page-hero--split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  text-align: left;
+  padding: 0;
+  align-items: stretch;
+}
+
+.page-hero--split .page-hero-copy {
+  padding: var(--space-2xl) var(--space-md) var(--space-2xl) max(var(--space-md), calc((100vw - var(--max-width)) / 2 + var(--space-md)));
+  align-self: center;
+}
+
+.page-hero--split .photo-panel {
+  min-height: 380px;
+}
+
+@media (max-width: 860px) {
+  .page-hero--split {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero--split .page-hero-copy {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .page-hero--split .photo-panel {
+    min-height: 300px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Service detail rows (Services page)
+--------------------------------------------------------------------------- */
+
+.service-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-md) var(--space-lg);
   padding: var(--space-lg) 0;
+  border-top: 1px solid var(--hairline);
+  align-items: start;
+}
+
+.service-row:last-of-type {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.service-row .icon-mark {
+  color: var(--color-gold);
+}
+
+.service-row h3 {
+  font-size: 1.625rem;
+  margin-bottom: var(--space-xs);
+}
+
+.service-row p {
+  max-width: 40rem;
+}
+
+.service-row .service-meta {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+@media (max-width: 640px) {
+  .service-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   FAQ accordion
+--------------------------------------------------------------------------- */
+
+.faq-list {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.faq-item .faq-answer {
+  padding: 0 0 var(--space-md);
+  max-width: 44rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Contact form — navy card, per the contact mockup
+--------------------------------------------------------------------------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card {
+  background: linear-gradient(180deg, var(--color-navy-light) 0%, var(--color-navy) 60%);
+  color: var(--color-limestone);
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-card h2 {
+  color: var(--color-white);
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.form-field {
+  margin-bottom: var(--space-sm);
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.4rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-navy);
+  background-color: var(--color-paper);
+  border: 1px solid transparent;
+  padding: 0.8rem 0.9rem;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-card .btn-gold {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--space-xs);
+}
+
+.form-note {
+  font-size: 0.8125rem;
+  opacity: 0.75;
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+   Footer
+--------------------------------------------------------------------------- */
+
+footer.site-footer {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  color: var(--color-limestone);
+  border-top: 2px solid var(--color-gold);
+  padding: var(--space-lg) 0 var(--space-md);
 }
 
 .footer-inner {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-lg);
   align-items: center;
-  gap: var(--space-sm);
-  text-align: center;
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
 }
 
 .footer-logo .wordmark-group {
   align-items: flex-start;
 }
 
+.footer-contact {
+  text-align: center;
+  font-size: 0.9375rem;
+}
+
 .footer-contact p {
-  margin: 0.25rem 0;
+  margin: 0.2rem 0;
 }
 
 .footer-social {
   display: flex;
   gap: var(--space-sm);
+  justify-content: flex-end;
 }
 
 .footer-social a {
   text-decoration: none;
   color: var(--color-gold);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-social a:hover {
+  color: var(--color-gold-soft);
+}
+
+.footer-tagline {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--hairline-light);
 }
 
 .footer-copyright {
   font-size: 0.8125rem;
-  opacity: 0.7;
+  opacity: 0.65;
+  text-align: center;
   margin-top: var(--space-sm);
+}
+
+@media (max-width: 800px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
 }

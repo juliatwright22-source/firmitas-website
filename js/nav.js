@@ -9,4 +9,12 @@ document.addEventListener('header:loaded', () => {
     const isOpen = menu.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', isOpen);
   });
+
+  // Mark the current page's nav link (gold underline via [aria-current] styling)
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  menu.querySelectorAll('a').forEach((link) => {
+    if (link.getAttribute('href') === currentPage && !link.classList.contains('btn-gold')) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
 });

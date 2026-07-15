@@ -77,3 +77,31 @@ Running log for continuity across sessions. Read this at the start of every sess
 9. No video clips provided yet — workflow is documented and ready whenever Julia has one.
 
 **Next session should:** build out `about.html`, `services.html`, `contact.html`, `faq.html` using the same section/copy approach, once Julia confirms sitemap/FAQ placement and the still-open decisions above.
+
+---
+
+## Session 3 — 2026-07-15
+
+**Redesign to match the mood-board look (Julia: "I really don't like how it looks… mirror and match those elements").** Julia confirmed three decisions up front: (1) use the AI mood-board images as real site imagery for now, (2) build the full site, all five pages, (3) keep the brief's exclusions excluded (no fake client logos, no team section, no blog, no map).
+
+**Built:**
+- Cropped clean photographic regions out of the mood-board composites (avoiding baked-in ad text) into `images/`: `hero-mountain.jpg` (summit figure, from Image 12), `column-dark.jpg` (stone column in dramatic light, from Image 11), `compass-navy.jpg` (brass compass on navy, from Image 14), `column-sketch.jpg` (architectural pencil sketch, from Image 13). These are interim — swap for licensed/original photography before heavy promotion.
+- Rebuilt the design system in `variables.css` + `styles.css` to match the references: limestone canvas site-wide (body is no longer white), warm paper/limestone/navy section rhythm, navy gradient bands with top light, signature short gold hairline rule (`.gold-rule`), letterspaced gold uppercase eyebrows, serif italic gold accent lines, sharp corners everywhere, gold-top-accent cards with hover lift, offset gold photo frame (`.framed-photo`), column-sketch background treatment (`.section--sketch`), split hero, interior `page-hero` (centered + split variants), service detail rows, FAQ accordion, navy contact form card, 3-column footer with gold top border and "Strength. Stability. Direction." tagline band.
+- Restyled `index.html` (same approved copy, new structure): split hero with mountain photo, triad + column photo section, sketch-backed Leadership Reality, navy Biblical Foundation, cards, compass-panel Why Firmitas ("Clarity is a competitive advantage." accent), framed founder photo, navy CTA band.
+- Built out all four remaining pages in the new system:
+  - `about.html` — name meaning (Vitruvius: firmitas/utilitas/venustas), founder story (generic bio, no employer names, no ICF language), Strength/Direction/Legacy philosophy triad, purpose quote band ("We partner with leaders to build unshakable foundations and lasting impact." — from the brand sheet).
+  - `services.html` — four service detail rows (no pricing; "investment discussed in the discovery conversation"), "How it begins" navy section with compass panel.
+  - `contact.html` — discovery-conversation framing + navy form card (name/email/org &amp; role/message). **Form is intentionally NOT wired to any submission logic** — Netlify Forms vs. scheduler still undecided.
+  - `faq.html` — 8 Q&amp;As written in the Firmitas voice. **DRAFT — Julia must check these against the approved Q&amp;A language in brief Section 8.6**; I did not have the brief text in this session.
+- Footer partial updated (3-column layout + tagline band); `nav.js` now marks the current page's nav link (gold underline via `[aria-current]`).
+- Fixed founder headshot cropping (nearly-square source; now `aspect-ratio: 4/5`, `object-position: center 30%`).
+- Verified in live preview at desktop + narrow widths: all five pages, nav active states, FAQ accordion open/close, no console errors.
+
+**Pending / needs Julia's input — carried over:**
+1. Contact form handling (Netlify Forms vs. external scheduler) — form UI exists, not wired.
+2. Real phone/email — still placeholders in the footer.
+3. FAQ copy — draft only, check against brief Section 8.6.
+4. GitHub repo + Netlify — still not set up.
+5. Domain spelling confirmation.
+6. Real photography to eventually replace the cropped AI mood-board images.
+7. Social links are still `#` placeholders.
