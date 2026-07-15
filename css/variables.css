@@ -1,0 +1,24 @@
+/* Firmitas design tokens — reference these everywhere; never hardcode hex values in styles.css */
+
+:root {
+  /* Color palette */
+  --color-navy: #0F1B2D;       /* Ink Navy — primary */
+  --color-limestone: #F2EFE6;  /* Limestone — secondary */
+  --color-gold: #C8A461;       /* Heritage Gold — accent, use sparingly */
+  --color-white: #FFFFFF;
+  --color-charcoal: #2B2B2B;   /* supporting dark neutral for body text */
+
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;   /* headlines, wordmark, italic accent lines */
+  --font-sans: 'Archivo', sans-serif;        /* body copy, nav, UI, forms */
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Layout */
+  --max-width: 1200px;
+}

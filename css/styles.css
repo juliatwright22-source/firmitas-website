@@ -1,0 +1,75 @@
+/* Firmitas site styles — references design tokens in variables.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Archivo:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Placeholder photo box — used until real photography/headshots are available */
+.photo-placeholder {
+  background-color: #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-charcoal);
+  font-size: 0.875rem;
+  text-align: center;
+  min-height: 240px;
+}
+
+/* Gold CTA button — primary interactive element on navy/limestone backgrounds */
+.btn-gold {
+  display: inline-block;
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-md);
+  border: none;
+  cursor: pointer;
+}
+
+/* Shared header/footer mount points — filled by js/includes.js */
+#site-header,
+#site-footer {
+  width: 100%;
+}
+
+footer.site-footer {
+  background-color: var(--color-navy);
+  color: var(--color-limestone);
+  padding: var(--space-lg) 0;
+}
