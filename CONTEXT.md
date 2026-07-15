@@ -118,15 +118,6 @@ Julia provided the full 12-section Firmitas Brand Bible (.docx files) at
 - Contact: "What to expect" uses approved discovery language (§8.5/§8.13); form rebuilt to §8.10 field spec — name, email, phone, company & role, inquiry type select (individual/team/company-sponsored), prompting challenge textarea, how-heard, optional biblical-grounding checkbox. Still not wired to any submission handler.
 - Homepage: title/description use §8.11 working SEO standard (includes Tulsa — **Tulsa prominence is an owner decision per §8.15, Julia should confirm**); added the client-outcome line (§8.2) to "What Firmitas Does"; final CTA band uses the approved discovery-invitation paragraph.
 
-### Session 3 (continued) — Scroll-told crumbling-column story on the homepage
-
-Julia asked for a scroll-driven opening: a column at the top of the homepage that crumbles as you scroll, ending with only the foundation and then three pillars appearing, while the Leadership Reality / What Firmitas Does / Biblical Foundation messages slide in and out alongside.
-
-- Built with **Higgsfield-generated image frames, not video** (scroll-scrubbed video is janky/heavy; frames crossfade smoothly and respect the site's performance rules). Five frames generated with nano_banana_pro on Julia's Higgsfield account (~12 credits), using the existing `column-sketch.jpg` as a style reference so they match the brand's pencil-sketch aesthetic: intact column → cracked → breaking apart mid-air → stump on foundation amid rubble → three new pillars on the same foundation. Saved as `images/column-stage-1..5.jpg` (860px wide, ~160KB each). Higgsfield job IDs are in this session's chat if regeneration is ever needed.
-- Homepage sections 3–5 (Leadership Reality, What Firmitas Does, Biblical Foundation) were replaced by the `.scrolly` section — same approved copy, now as sliding panels, plus a finale panel ("The Firmitas Way / Strength. Direction. Legacy.") synchronized with the three-pillars frame.
-- Implementation: `data-scrolly` section 520vh tall with a sticky 100vh inner grid (panels left, figure right); `js/main.js` maps scroll progress to frame crossfades and panel enter/exit bands via rAF; a radial CSS mask vignettes the sketch paper into the limestone canvas. **No-JS and `prefers-reduced-motion` visitors get the static fallback** (all panels stacked, intact-column frame only) — the JS only enhances when motion is allowed.
-- Verified in preview: frame/panel state machine correct at multiple scroll positions, finale renders, no console errors. Note: the preview tool kept restoring scroll between calls (reload artifacts), so state was asserted via DOM classes as well as screenshots.
-
 **New flags for Julia from the Brand Bible:**
 - §2.11 says gold/bronze is NOT part of the final primary palette (ink navy + limestone only) — but the mood-board direction Julia chose is gold-heavy and she explicitly asked to match it. Kept gold; flag if the designer's final palette drops it.
 - §2.13 cautions against mountain-top clichés and literal columns as visual shortcuts — same tension with the chosen mood boards; noted, not changed.
