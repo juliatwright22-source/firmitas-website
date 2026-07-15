@@ -19,7 +19,7 @@
 
   /* Typography */
   --font-serif: 'Playfair Display', serif;   /* headlines, wordmark, italic accent lines */
-  --font-sans: 'Archivo', sans-serif;        /* body copy, nav, UI, forms */
+  --font-sans: 'Work Sans', sans-serif;      /* body copy, nav, UI, forms */
   --tracking-label: 0.18em;                  /* letterspaced uppercase labels */
 
   /* Spacing scale */
