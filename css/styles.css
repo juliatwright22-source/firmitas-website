@@ -384,8 +384,14 @@ img {
 .hero-copy {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.hero-copy > * {
   max-width: 38rem;
-  padding: var(--space-xl) var(--space-md) var(--space-xl) max(var(--space-md), calc((100vw - var(--max-width)) / 2 + var(--space-md)));
 }
 
 .hero-copy h1 {

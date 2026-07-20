@@ -188,3 +188,9 @@ Julia provided the full 12-section Firmitas Brand Bible (.docx files) at
 8. Paused: whether to copy `designreference1.jpg`'s 6 mockup layouts more literally page-by-page, and whether to AI-generate more stock-style photography for that — team section, fake client-logo bar, and blog page stay excluded per Session 3's decision either way.
 
 **Next session should:** ask Julia which of the above to prioritize — likely either the paused `designreference1.jpg` layout question, or wiring up the contact form now that the visual design is largely stable.
+
+---
+
+## Session 5
+
+**Fixed: hero headline wrapping one word per line on wide screens.** Julia reported the homepage hero text rendering as a single narrow column with every word on its own line, even after a hard refresh — a real bug, not a caching issue. Root cause: `.hero-copy` had `max-width: 38rem` (608px, added during the full-bleed hero rebuild) combined with a leftover `padding-left: calc((100vw - var(--max-width)) / 2 + var(--space-md))` inherited from the old split-hero layout, where that viewport-relative padding made sense because `.hero-copy` had no `max-width` of its own. On wide viewports the calculated padding alone (e.g. ~680px on a 2500px-wide screen) exceeded the entire 608px box, leaving ~0px for actual text and forcing the browser to wrap every word individually. Fixed by making `.hero-copy` behave like the site's standard `.container` (max-width: var(--max-width), centered, fixed padding) and moving the 38rem text-column constraint onto its direct children instead of the outer box, so the padding math can never exceed the available width at any viewport size.
