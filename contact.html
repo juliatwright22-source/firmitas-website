@@ -17,8 +17,8 @@
 
   <main>
     <!-- Contact / Discovery page: inquiry form positioned as scheduling a discovery conversation.
-         No physical address or map. Form-handling method (Netlify Forms vs. external scheduler)
-         is unconfirmed — the form below is intentionally NOT wired to any submission logic yet. -->
+         No physical address or map. Submits to HubSpot's Forms API via js/main.js — see that
+         file for the field mapping and endpoint/portal/form IDs. -->
 
     <!-- Page hero -->
     <section class="page-hero">
@@ -42,7 +42,7 @@
           <p class="accent-line" style="margin-top: var(--space-md);">Built to stand.</p>
         </div>
 
-        <!-- Field set follows Brand Bible 8.10 discovery-form guidance. Submission handling still unwired. -->
+        <!-- Field set follows Brand Bible 8.10 discovery-form guidance. Submits to HubSpot on submit — see js/main.js. -->
         <form class="contact-card" novalidate>
           <h2>Schedule a Discovery Conversation</h2>
           <div class="form-field">
