@@ -38,7 +38,7 @@
     </section>
 
     <!-- 2. Icon triad + column photography, directly beneath the hero per the brand's UI pattern -->
-    <section class="section section--paper">
+    <section class="section section--tight section--paper">
       <div class="container feature-row">
         <div>
           <div class="section-heading" style="margin-bottom: var(--space-md);">
@@ -79,52 +79,46 @@
       </div>
     </section>
 
-    <!-- 3. The leadership reality — column sketch bleeds in at right -->
-    <section class="section section--sketch">
-      <div class="container">
-        <div class="section-heading">
+    <!-- 3-5. Rotating navy story: Leadership Reality / What Firmitas Does / Biblical Foundation.
+         Auto-cycles via js/main.js. No-JS and prefers-reduced-motion visitors get all three
+         panels stacked and visible (see .story-panel default display in styles.css). -->
+    <section class="story-carousel" data-carousel aria-label="The Firmitas story: the leadership reality, what Firmitas does, and our biblical foundation">
+      <div class="story-photo">
+        <img src="images/column-dark.jpg" alt="" />
+      </div>
+      <div class="story-overlay"></div>
+      <div class="container story-inner">
+        <div class="story-panel is-active" data-panel>
           <span class="eyebrow">The Leadership Reality</span>
           <h2>Leadership carries more weight than the scoreboard shows.</h2>
           <hr class="gold-rule" />
+          <p>The decisions you make shape more than financial results. They shape people, culture, families, and the future of the organization entrusted to you. Leadership can be rewarding, but it can also be isolating. Firmitas provides a confidential place to think clearly, confront difficult issues, and lead with greater wisdom and courage.</p>
         </div>
-        <p class="lede">The decisions you make shape more than financial results. They shape people, culture, families, and the future of the organization entrusted to you. Leadership can be rewarding, but it can also be isolating. Firmitas provides a confidential place to think clearly, confront difficult issues, and lead with greater wisdom and courage.</p>
-      </div>
-    </section>
-
-    <!-- 4. What Firmitas does -->
-    <section class="section section--paper">
-      <div class="container">
-        <div class="section-heading">
+        <div class="story-panel" data-panel>
           <span class="eyebrow">What Firmitas Does</span>
           <h2>Coaching for the leader behind the performance.</h2>
           <hr class="gold-rule" />
+          <p>Firmitas helps leaders strengthen the person behind the performance. Coaching may address decision-making, communication, team leadership, accountability, execution, conflict, personal discipline, calling, stewardship, or legacy. The priorities are shaped by the client's actual responsibilities, not a generic curriculum.</p>
+          <p class="accent-line" style="margin-top: var(--space-sm);">Stronger leaders. Healthier teams. Clearer decisions. More enduring organizations.</p>
         </div>
-        <p class="lede">Firmitas helps leaders strengthen the person behind the performance. Coaching may address decision-making, communication, team leadership, accountability, execution, conflict, personal discipline, calling, stewardship, or legacy. The priorities are shaped by the client's actual responsibilities, not a generic curriculum.</p>
-        <p class="accent-line" style="margin-top: var(--space-md);">Stronger leaders. Healthier teams. Clearer decisions. More enduring organizations.</p>
-      </div>
-    </section>
-
-    <!-- 5. Biblical foundation — navy gradient band, centered -->
-    <section class="section section--navy">
-      <div class="container">
-        <div class="section-heading section-heading--center" style="margin-bottom: var(--space-md);">
+        <div class="story-panel" data-panel>
           <span class="eyebrow">Biblical Foundation</span>
           <h2>Scripture is the foundation, not a decoration.</h2>
-          <hr class="gold-rule gold-rule--center" />
+          <hr class="gold-rule" />
+          <p>Scripture is not a decorative element of the Firmitas brand. It is the foundation of our coaching philosophy. We believe biblical truth provides enduring guidance for character, stewardship, relationships, courage, wisdom, work, and leadership. Modern research and proven business practices can be valuable, but they are evaluated through a biblical worldview rather than treated as the final authority.</p>
         </div>
-        <p class="lede" style="margin: 0 auto; text-align: center;">Scripture is not a decorative element of the Firmitas brand. It is the foundation of our coaching philosophy. We believe biblical truth provides enduring guidance for character, stewardship, relationships, courage, wisdom, work, and leadership. Modern research and proven business practices can be valuable, but they are evaluated through a biblical worldview rather than treated as the final authority.</p>
       </div>
     </section>
 
     <!-- 6. Who we serve -->
-    <section class="section">
+    <section class="section section--tight">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Who We Serve</span>
           <h2>Built for leaders carrying real responsibility.</h2>
           <hr class="gold-rule" />
         </div>
-        <div class="card-grid">
+        <div class="card-grid card-grid--5up">
           <div class="card">
             <h3>Founders, Owners &amp; CEOs</h3>
             <p>Leaders carrying the full weight of building and sustaining an organization.</p>
@@ -150,7 +144,7 @@
     </section>
 
     <!-- 7. Coaching options -->
-    <section class="section section--paper">
+    <section class="section section--tight section--paper">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Coaching Options</span>
@@ -183,7 +177,7 @@
     </section>
 
     <!-- 8. Why Firmitas — compass photography panel -->
-    <section class="section section--navy">
+    <section class="section section--tight section--navy">
       <div class="container two-col">
         <div>
           <span class="eyebrow">Why Firmitas</span>
