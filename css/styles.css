@@ -149,13 +149,74 @@ img {
   padding: var(--space-xl) 0;
 }
 
-/* Condensed vertical rhythm — used on the homepage to keep sections from feeling sparse */
-.section--tight {
-  padding: var(--space-lg) 0;
+/* Roomier rhythm for the homepage (excluding hero): taller sections, wider content
+   column, and larger type so each section reads as a full statement rather than a
+   cramped, narrow rectangle. */
+.section--roomy {
+  padding: var(--space-2xl) 0;
 }
 
-.section--tight .section-heading {
-  margin-bottom: var(--space-md);
+.section--roomy .container {
+  max-width: 1440px;
+}
+
+.section--roomy .section-heading {
+  max-width: 62rem;
+  margin-bottom: var(--space-lg);
+}
+
+.section--roomy .section-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.section--roomy .lede {
+  max-width: 58rem;
+  font-size: 1.375rem;
+}
+
+.section--roomy .accent-line {
+  font-size: 1.625rem;
+}
+
+.section--roomy.cta-band h2 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.section--roomy.cta-band p {
+  max-width: 50rem;
+  font-size: 1.375rem;
+}
+
+.section--roomy .icon-triad-item h3 {
+  font-size: 1rem;
+}
+
+.section--roomy .icon-triad-item p {
+  font-size: 1.0625rem;
+  max-width: 19rem;
+}
+
+.section--roomy .icon-triad-item .icon-mark {
+  width: 64px;
+  height: 64px;
+}
+
+.section--roomy .card {
+  padding: var(--space-lg);
+}
+
+.section--roomy .card h3 {
+  font-size: 1.75rem;
+}
+
+.section--roomy .card p {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 640px) {
+  .section--roomy {
+    padding: var(--space-xl) 0;
+  }
 }
 
 .section--paper {
@@ -444,7 +505,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: min(560px, 78vh);
+  min-height: min(680px, 82vh);
   overflow: hidden;
   background-color: var(--color-navy);
 }
@@ -469,23 +530,29 @@ img {
 .story-inner {
   position: relative;
   z-index: 2;
-  padding: var(--space-lg) var(--space-md);
+  max-width: 1440px;
+  padding: var(--space-2xl) var(--space-md);
 }
 
 .story-panel {
   display: block;
-  max-width: 40rem;
-  margin-bottom: var(--space-md);
+  max-width: 52rem;
+  margin-bottom: var(--space-lg);
 }
 
-.story-panel h2,
-.story-panel h3 {
+.story-panel h2 {
   color: var(--color-white);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
 }
 
 .story-panel p {
   color: var(--color-limestone);
   opacity: 0.92;
+  font-size: 1.375rem;
+}
+
+.story-panel .accent-line {
+  font-size: 1.625rem;
 }
 
 /* Once JS confirms it can run, collapse to one panel at a time and animate the swap */
@@ -513,6 +580,12 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .story-carousel.carousel-ready .story-panel.is-active {
     animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-inner {
+    padding: var(--space-lg) var(--space-md);
   }
 }
 
@@ -699,20 +772,20 @@ img {
 /* Who We Serve — 5 cards side by side instead of 4-across with an orphan row */
 .card-grid--5up {
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
 .card-grid--5up .card {
-  padding: var(--space-sm);
-  gap: 0.4rem;
+  padding: var(--space-md);
+  gap: var(--space-xs);
 }
 
 .card-grid--5up .card h3 {
-  font-size: 1.0625rem;
+  font-size: 1.375rem;
 }
 
 .card-grid--5up .card p {
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
 }
 
 @media (max-width: 900px) {
